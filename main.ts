@@ -19,11 +19,11 @@ let mySprite2 = sprites.create(img`
     4 4 4 4 
     `, SpriteKind.Player)
 let enemy4 = sprites.create(img`
-    2 2 2 2
-    2 2 2 2
-    2 2 2 2
-    2 2 2 2
-`, SpriteKind.Enemy)
+    2 2 2 2 
+    2 2 2 2 
+    2 2 2 2 
+    2 2 2 2 
+    `, SpriteKind.Enemy)
 game.stats = true
 // game.consoleOverlay.setVisible(true)
 enemy4.x = 0
@@ -33,7 +33,7 @@ mySprite2.setStayInScreen(true)
 scene.cameraFollowSprite(mySprite)
 tiles.setCurrentTilemap(tilemap`level`)
 // controller.moveSprite(mySprite, 200, 200)
-mySprite.y = 24*16
+mySprite.y = 24 * 16
 mySprite.vy = -25
 controller.moveSprite(mySprite2, 40, 40)
 spawn_range_x = [-3 * 16, 3 * 16]
@@ -54,7 +54,7 @@ game.onUpdate(function () {
     } else {
         enemy4.follow(null)
     }
-    if (mySprite2.isHittingTile(CollisionDirection.Top)) {// || mySprite2.isHittingTile(CollisionDirection.Bottom)) {
+    if (mySprite2.isHittingTile(CollisionDirection.Top)) {
         mySprite.vy = 0
     } else {
         mySprite.vy = -25
